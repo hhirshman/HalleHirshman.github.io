@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Halle Hirshman | Engineering Portfolio</title>
+  <style>
+    :root {
+      --bg: #101318;
+      --card: #1c222b;
+      --text: #f4f5f7;
+      --muted: #a8b1bf;
+      --accent: #548fcf;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: auto;
+      padding: 0 28px;
+    }
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid #303742;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 14px;
+    }
+
+    nav a:hover { color: white; }
+
+    .hero {
+      padding: 130px 0 120px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+
+    h1 {
+      font-size: clamp(52px, 9vw, 112px);
+      letter-spacing: -5px;
+      line-height: 1.05;
+      margin: 22px 0;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 22px;
+      margin: 20px 12px 0 0;
+      border: 1px solid #667180;
+      border-radius: 4px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.25s;
+    }
+
+    .button.primary {
+      background: white;
+      color: var(--bg);
+      border-color: white;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    section { padding: 70px 0; }
+
+    h2 {
+      font-size: 32px;
+      letter-spacing: -1px;
+      margin-bottom: 35px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .project {
+      background: var(--card);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-7px);
+    }
+
+    .project-image {
+      height: 260px;
+      background: linear-gradient(135deg, #293a4e, #151b24);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aebed1;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    .project-info { padding: 24px; }
+
+    .project-info h3 {
+      margin: 0 0 6px;
+      font-size: 21px;
+    }
+
+    .project-info p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .about {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    footer {
+      border-top: 1px solid #303742;
+      padding: 45px 0;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: white;
+      margin-right: 20px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      .hero { padding: 90px 0; }
+      h1 { letter-spacing: -2px; }
+      .projects { grid-template-columns: 1fr; }
+      .project-image { height: 220px; }
+      nav a { margin-left: 12px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">HH / ENGINEERING</div>
+        <div>
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <div class="eyebrow">
+        Mechanical Engineering · WashU '28
+      </div>
+
+      <h1>Halle<br>Hirshman.</h1>
+
+      <p>
+        Exploring aerospace, electrification, and
+        thermal-fluid systems through engineering
+        design, analysis, and hands-on testing.
+      </p>
+
+      <a class="button primary" href="#projects">
+        Explore Projects ↗
+      </a>
+      <a class="button" href="#contact">
+        Get in Touch ↗
+      </a>
+    </div>
+
+    <section id="projects">
+      <div class="eyebrow">01 / Selected Work</div>
+      <h2>Engineering Projects</h2>
+
+      <div class="projects">
+        <article class="project">
+          <div class="project-image">PROJECT IMAGE 01</div>
+          <div class="project-info">
+            <h3>Aircraft Propulsion</h3>
+            <p>AIAA Design-Build-Fly</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-image">PROJECT IMAGE 02</div>
+          <div class="project-info">
+            <h3>Melting Dynamics</h3>
+            <p>Thermal-Fluids Research</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-image">PROJECT IMAGE 03</div>
+          <div class="project-info">
+            <h3>Electrification Engineering</h3>
+            <p>Caterpillar Internship</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-image">PROJECT IMAGE 04</div>
+          <div class="project-info">
+            <h3>Additional Engineering Work</h3>
+            <p>Future Project</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="eyebrow">02 / About</div>
+      <h2>About Me</h2>
+      <p class="about">
+        I'm a mechanical engineering student at
+        Washington University in St. Louis.
+        This section will eventually include more
+        about my experiences, interests, and approach
+        to engineering.
+      </p>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="container">
+      <h2>Let's Connect.</h2>
+      <p>Contact links coming soon.</p>
+    </div>
+  </footer>
+</body>
+</html>

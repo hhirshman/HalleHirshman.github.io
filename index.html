@@ -6,10 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Halle Hirshman | Engineering Portfolio</title>
   
+.project-image {
+  overflow: hidden;
+}
+
 .project-image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  background: #e8ebef;
+}
+
+.project-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-link:hover h3 {
+  color: #8ebdff;
+}
+
+.project-link:focus-visible {
+  outline: 2px solid #8ebdff;
+  outline-offset: 4px;
 }
 
   <style>
@@ -230,15 +250,19 @@
 
       <div class="projects">
 
-        <article class="project">
-            <div class="project-image">
-            <img src="x3-coaster.png" alt="X3 Roller Coaster CAD model">
-            </div>
-            <div class="project-info">
-            <h3>X3 Roller Coaster</h3>
-            <p>SolidWorks · Assembly Design · Motion Simulation</p>
-            </div>
-        </article>
+  
+<a href="x3-coaster.html" class="project-link">
+  <article class="project">
+    <div class="project-image">
+      <img src="x3-coaster.png" alt="X3 Roller Coaster CAD model">
+    </div>
+    <div class="project-info">
+      <h3>X3 Roller Coaster</h3>
+      <p>SolidWorks · Assembly Design · Motion Simulation</p>
+    </div>
+  </article>
+</a>
+
 
 
         <article class="project">

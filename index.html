@@ -5,13 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Halle Hirshman | Engineering Portfolio</title>
-  
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Halle Hirshman | Engineering Portfolio</title>
 
   <style>
     :root {
@@ -20,20 +13,16 @@
       --text: #f4f5f7;
       --muted: #a8b1bf;
       --accent: #548fcf;
+      --border: #303742;
     }
 
-  <style>
-    :root {
-      --bg: #101318;
-      --card: #1c222b;
-      --text: #f4f5f7;
-      --muted: #a8b1bf;
-      --accent: #548fcf;
+    * {
+      box-sizing: border-box;
     }
 
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -45,19 +34,22 @@
 
     .container {
       max-width: 1120px;
-      margin: auto;
+      margin: 0 auto;
       padding: 0 28px;
     }
 
+    /* NAVIGATION */
+
     header {
       padding: 28px 0;
-      border-bottom: 1px solid #303742;
+      border-bottom: 1px solid var(--border);
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
     }
 
     .logo {
@@ -66,14 +58,23 @@
       letter-spacing: 2px;
     }
 
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
     nav a {
       color: var(--muted);
       text-decoration: none;
-      margin-left: 24px;
       font-size: 14px;
     }
 
-    nav a:hover { color: white; }
+    nav a:hover {
+      color: white;
+    }
+
+    /* HERO */
 
     .hero {
       padding: 130px 0 120px;
@@ -108,7 +109,7 @@
       color: white;
       text-decoration: none;
       font-size: 14px;
-      transition: 0.25s;
+      transition: transform 0.25s;
     }
 
     .button.primary {
@@ -121,7 +122,11 @@
       transform: translateY(-3px);
     }
 
-    section { padding: 70px 0; }
+    /* SECTIONS */
+
+    section {
+      padding: 70px 0;
+    }
 
     h2 {
       font-size: 32px;
@@ -129,16 +134,24 @@
       margin-bottom: 35px;
     }
 
+    /* PROJECT GRID */
+
     .projects {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 28px;
     }
 
+    /* CLICKABLE PROJECT CARDS */
+
     .project {
+      display: block;
+      min-width: 0;
       background: var(--card);
       border-radius: 8px;
       overflow: hidden;
+      color: var(--text);
+      text-decoration: none;
       transition: transform 0.3s;
     }
 
@@ -146,22 +159,47 @@
       transform: translateY(-7px);
     }
 
+    .project:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    /* PROJECT IMAGES */
+
     .project-image {
       height: 260px;
-      background: linear-gradient(135deg, #293a4e, #151b24);
+      background: linear-gradient(
+        135deg,
+        #293a4e,
+        #151b24
+      );
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
       color: #aebed1;
       letter-spacing: 2px;
       font-size: 13px;
     }
 
-    .project-info { padding: 24px; }
+    .project-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #e8ebef;
+    }
+
+    /* PROJECT TEXT */
+
+    .project-info {
+      padding: 24px;
+    }
 
     .project-info h3 {
       margin: 0 0 6px;
       font-size: 21px;
+      color: var(--text);
     }
 
     .project-info p {
@@ -170,14 +208,22 @@
       font-size: 14px;
     }
 
+    .project:hover h3 {
+      color: #8ebdff;
+    }
+
+    /* ABOUT */
+
     .about {
       max-width: 720px;
       color: var(--muted);
       font-size: 18px;
     }
 
+    /* FOOTER */
+
     footer {
-      border-top: 1px solid #303742;
+      border-top: 1px solid var(--border);
       padding: 45px 0;
       color: var(--muted);
     }
@@ -188,22 +234,42 @@
       text-decoration: none;
     }
 
+    /* MOBILE */
+
     @media (max-width: 700px) {
-      .hero { padding: 90px 0; }
-      h1 { letter-spacing: -2px; }
-      .projects { grid-template-columns: 1fr; }
-      .project-image { height: 220px; }
-      nav a { margin-left: 12px; }
+      .hero {
+        padding: 90px 0;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .project-image {
+        height: 220px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- NAVIGATION -->
+
   <header>
     <div class="container">
       <nav>
         <div class="logo">HH / ENGINEERING</div>
-        <div>
+
+        <div class="nav-links">
           <a href="#projects">Projects</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
@@ -213,6 +279,9 @@
   </header>
 
   <main class="container">
+
+    <!-- INTRODUCTION -->
+
     <div class="hero">
       <div class="eyebrow">
         Mechanical Engineering · WashU '28
@@ -229,10 +298,13 @@
       <a class="button primary" href="#projects">
         Explore Projects ↗
       </a>
+
       <a class="button" href="#contact">
         Get in Touch ↗
       </a>
     </div>
+
+    <!-- PROJECTS -->
 
     <section id="projects">
       <div class="eyebrow">01 / Selected Work</div>
@@ -240,50 +312,73 @@
 
       <div class="projects">
 
-  
-<a href="x3-coaster.html" class="project-link">
-  <article class="project">
-    <div class="project-image">
-      <img src="x3-coaster.png" alt="X3 Roller Coaster CAD model">
-    </div>
-    <div class="project-info">
-      <h3>X3 Roller Coaster</h3>
-      <p>SolidWorks · Assembly Design · Motion Simulation</p>
-    </div>
-  </article>
-</a>
+        <!-- PROJECT 1: X3 ROLLER COASTER -->
 
+        <a href="x3-coaster.html" class="project">
+          <div class="project-image">
+            <img
+              src="x3-coaster.png"
+              alt="X3 Roller Coaster CAD assembly"
+            >
+          </div>
 
+          <div class="project-info">
+            <h3>X3 Roller Coaster</h3>
+            <p>
+              SolidWorks · Assembly Design ·
+              Motion Simulation
+            </p>
+          </div>
+        </a>
 
-        <article class="project">
-          <div class="project-image">PROJECT IMAGE 02</div>
+        <!-- PROJECT 2: THERMAL FLUIDS -->
+
+        <a href="melting-dynamics.html" class="project">
+          <div class="project-image">
+            PROJECT IMAGE 02
+          </div>
+
           <div class="project-info">
             <h3>Melting Dynamics</h3>
             <p>Thermal-Fluids Research</p>
           </div>
-        </article>
+        </a>
 
-        <article class="project">
-          <div class="project-image">PROJECT IMAGE 03</div>
+        <!-- PROJECT 3: CATERPILLAR -->
+
+        <a href="electrification.html" class="project">
+          <div class="project-image">
+            PROJECT IMAGE 03
+          </div>
+
           <div class="project-info">
             <h3>Electrification Engineering</h3>
             <p>Caterpillar Internship</p>
           </div>
-        </article>
+        </a>
 
-        <article class="project">
-          <div class="project-image">PROJECT IMAGE 04</div>
+        <!-- PROJECT 4: FUTURE PROJECT -->
+
+        <a href="project-4.html" class="project">
+          <div class="project-image">
+            PROJECT IMAGE 04
+          </div>
+
           <div class="project-info">
             <h3>Additional Engineering Work</h3>
             <p>Future Project</p>
           </div>
-        </article>
+        </a>
+
       </div>
     </section>
+
+    <!-- ABOUT -->
 
     <section id="about">
       <div class="eyebrow">02 / About</div>
       <h2>About Me</h2>
+
       <p class="about">
         I'm a mechanical engineering student at
         Washington University in St. Louis.
@@ -292,7 +387,10 @@
         to engineering.
       </p>
     </section>
+
   </main>
+
+  <!-- CONTACT -->
 
   <footer id="contact">
     <div class="container">
@@ -300,5 +398,6 @@
       <p>Contact links coming soon.</p>
     </div>
   </footer>
+
 </body>
 </html>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>X3 Roller Coaster | Halle Hirshman</title>
+  <title>Halle Hirshman | Engineering Portfolio</title>
 
   <style>
     :root {
@@ -13,47 +13,71 @@
       --text: #f4f5f7;
       --muted: #a8b1bf;
       --accent: #548fcf;
+      --border: #303742;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
       background: var(--bg);
       color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     .container {
-      max-width: 1050px;
-      margin: auto;
+      max-width: 1120px;
+      margin: 0 auto;
       padding: 0 28px;
     }
 
+    /* NAVIGATION */
+
     header {
       padding: 28px 0;
-      border-bottom: 1px solid #303742;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
     }
 
     .logo {
-      color: white;
-      text-decoration: none;
       font-size: 14px;
       font-weight: bold;
       letter-spacing: 2px;
     }
 
-    .back {
-      display: inline-block;
-      margin: 55px 0 35px;
-      color: var(--accent);
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    nav a {
+      color: var(--muted);
       text-decoration: none;
       font-size: 14px;
     }
 
-    .back:hover {
+    nav a:hover {
       color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 130px 0 120px;
     }
 
     .eyebrow {
@@ -64,106 +88,173 @@
     }
 
     h1 {
-      font-size: clamp(48px, 8vw, 88px);
-      letter-spacing: -4px;
-      line-height: 1.1;
-      margin: 20px 0;
+      font-size: clamp(52px, 9vw, 112px);
+      letter-spacing: -5px;
+      line-height: 1.05;
+      margin: 22px 0;
     }
 
-    .subtitle {
-      max-width: 750px;
+    .hero p {
+      max-width: 650px;
       color: var(--muted);
       font-size: 19px;
     }
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 28px 0 45px;
-    }
-
-    .tag {
-      border: 1px solid #394452;
+    .button {
+      display: inline-block;
+      padding: 12px 22px;
+      margin: 20px 12px 0 0;
+      border: 1px solid #667180;
       border-radius: 4px;
-      padding: 7px 14px;
-      color: #b8c5d4;
-      font-size: 13px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: transform 0.25s;
     }
 
-    .hero-image {
-      background: #e8ebef;
-      border-radius: 8px;
-      overflow: hidden;
+    .button.primary {
+      background: white;
+      color: var(--bg);
+      border-color: white;
     }
 
-    .hero-image img {
-      display: block;
-      width: 100%;
-      height: auto;
+    .button:hover {
+      transform: translateY(-3px);
     }
+
+    /* SECTIONS */
 
     section {
-      padding: 45px 0 20px;
+      padding: 70px 0;
     }
 
     h2 {
-      font-size: 30px;
+      font-size: 32px;
       letter-spacing: -1px;
-      margin-bottom: 20px;
+      margin-bottom: 35px;
     }
 
-    p {
-      color: var(--muted);
-    }
+    /* PROJECT GRID */
 
-    .content {
-      max-width: 800px;
-      font-size: 17px;
-    }
-
-    .gallery {
+    .projects {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
+      gap: 28px;
     }
 
-    .gallery-item {
+    /* CLICKABLE PROJECT CARDS */
+
+    .project {
+      display: block;
+      min-width: 0;
       background: var(--card);
       border-radius: 8px;
       overflow: hidden;
+      color: var(--text);
+      text-decoration: none;
+      transition: transform 0.3s;
     }
 
-    .gallery-item img {
+    .project:hover {
+      transform: translateY(-7px);
+    }
+
+    .project:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    /* PROJECT IMAGES */
+
+    .project-image {
+      height: 260px;
+      background: linear-gradient(
+        135deg,
+        #293a4e,
+        #151b24
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: #aebed1;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    .project-image img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: contain;
       background: #e8ebef;
     }
 
-    .gallery-item p {
-      padding: 0 18px 12px;
+    /* PROJECT TEXT */
+
+    .project-info {
+      padding: 24px;
+    }
+
+    .project-info h3 {
+      margin: 0 0 6px;
+      font-size: 21px;
+      color: var(--text);
+    }
+
+    .project-info p {
+      margin: 0;
+      color: var(--muted);
       font-size: 14px;
     }
 
+    .project:hover h3 {
+      color: #8ebdff;
+    }
+
+    /* ABOUT */
+
+    .about {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    /* FOOTER */
+
     footer {
-      margin-top: 70px;
-      border-top: 1px solid #303742;
-      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      padding: 45px 0;
+      color: var(--muted);
     }
 
     footer a {
       color: white;
+      margin-right: 20px;
       text-decoration: none;
     }
 
+    /* MOBILE */
+
     @media (max-width: 700px) {
-      .gallery {
-        grid-template-columns: 1fr;
+      .hero {
+        padding: 90px 0;
       }
 
       h1 {
         letter-spacing: -2px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .project-image {
+        height: 220px;
+      }
+
+      .nav-links {
+        gap: 12px;
       }
     }
   </style>
@@ -171,134 +262,140 @@
 
 <body>
 
+  <!-- NAVIGATION -->
+
   <header>
     <div class="container">
-      <a class="logo" href="index.html">
-        HH / ENGINEERING
-      </a>
+      <nav>
+        <div class="logo">HH / ENGINEERING</div>
+
+        <div class="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
     </div>
   </header>
 
   <main class="container">
 
-    <a class="back" href="index.html#projects">
-      ← Back to Projects
-    </a>
+    <!-- INTRODUCTION -->
 
-    <div class="eyebrow">
-      01 / CAD & Mechanical Design
+    <div class="hero">
+      <div class="eyebrow">
+        Mechanical Engineering · WashU '28
+      </div>
+
+      <h1>Halle<br>Hirshman.</h1>
+
+      <p>
+        Exploring aerospace, electrification, and
+        thermal-fluid systems through engineering
+        design, analysis, and hands-on testing.
+      </p>
+
+      <a class="button primary" href="#projects">
+        Explore Projects ↗
+      </a>
+
+      <a class="button" href="#contact">
+        Get in Touch ↗
+      </a>
     </div>
 
-    <h1>X3 Roller Coaster</h1>
+    <!-- PROJECTS -->
 
-    <p class="subtitle">
-      A SolidWorks mechanical assembly exploring
-      independent seat rotation and track-guided motion.
-    </p>
+    <section id="projects">
+      <div class="eyebrow">01 / Selected Work</div>
+      <h2>Engineering Projects</h2>
 
-    <div class="tags">
-      <span class="tag">SolidWorks</span>
-      <span class="tag">3D Modeling</span>
-      <span class="tag">Assembly Design</span>
-      <span class="tag">Motion Constraints</span>
-    </div>
+      <div class="projects">
 
-    <!-- MAIN PROJECT IMAGE -->
+        <!-- PROJECT 1: X3 ROLLER COASTER -->
 
-    <div class="hero-image">
-      <img src="x3-coaster.png"
-           alt="X3 Roller Coaster CAD assembly">
-    </div>
+        <a href="x3-coaster.html" class="project">
+          <div class="project-image">
+            <img
+              src="x3-coaster.png"
+              alt="X3 Roller Coaster CAD assembly"
+            >
+          </div>
 
-    <!-- PROJECT OVERVIEW -->
+          <div class="project-info">
+            <h3>X3 Roller Coaster</h3>
+            <p>
+              SolidWorks · Assembly Design ·
+              Motion Simulation
+            </p>
+          </div>
+        </a>
 
-    <section class="content">
-      <h2>Project Overview</h2>
+        <!-- PROJECT 2: THERMAL FLUIDS -->
 
-      <p>
-        For our Computer-Aided Design final project,
-        our team designed a small-scale roller coaster
-        inspired by the X2 ride at Six Flags.
-      </p>
+        <a href="melting-dynamics.html" class="project">
+          <div class="project-image">
+            PROJECT IMAGE 02
+          </div>
 
-      <p>
-        The assembly was designed to demonstrate
-        two types of movement: independent seat
-        rotation under gravity and movement of
-        the seat assembly along a track.
-      </p>
-    </section>
+          <div class="project-info">
+            <h3>Melting Dynamics</h3>
+            <p>Thermal-Fluids Research</p>
+          </div>
+        </a>
 
-    <!-- ENGINEERING PROCESS -->
+        <!-- PROJECT 3: CATERPILLAR -->
 
-    <section class="content">
-      <h2>Engineering & Design Process</h2>
+        <a href="electrification.html" class="project">
+          <div class="project-image">
+            PROJECT IMAGE 03
+          </div>
 
-      <p>
-        The project involved modeling individual
-        components, integrating them into a larger
-        assembly, and applying motion constraints
-        to simulate the intended movements.
-      </p>
+          <div class="project-info">
+            <h3>Electrification Engineering</h3>
+            <p>Caterpillar Internship</p>
+          </div>
+        </a>
 
-      <p>
-        Design challenges included developing the
-        track geometry, aligning components from
-        different team members, and troubleshooting
-        assembly constraints.
-      </p>
-    </section>
+        <!-- PROJECT 4: FUTURE PROJECT -->
 
-    <!-- IMAGE GALLERY -->
+        <a href="project-4.html" class="project">
+          <div class="project-image">
+            PROJECT IMAGE 04
+          </div>
 
-    <section>
-      <h2>Technical Drawings</h2>
-
-      <div class="gallery">
-
-        <!-- DRAWING 1 -->
-        <div class="gallery-item">
-          <img src="x3-track.png"
-               alt="Roller coaster track drawing">
-          <p>Track geometry and support structure</p>
-        </div>
-
-        <!-- DRAWING 2 -->
-        <div class="gallery-item">
-          <img src="x3-seat.png"
-               alt="Roller coaster seat assembly">
-          <p>Rotating seat assembly</p>
-        </div>
+          <div class="project-info">
+            <h3>Additional Engineering Work</h3>
+            <p>Future Project</p>
+          </div>
+        </a>
 
       </div>
     </section>
 
-    <!-- RESULTS -->
+    <!-- ABOUT -->
 
-    <section class="content">
-      <h2>Results & Takeaways</h2>
+    <section id="about">
+      <div class="eyebrow">02 / About</div>
+      <h2>About Me</h2>
 
-      <p>
-        The completed CAD assembly demonstrated
-        the intended sliding and rotating motions
-        in simulation.
-      </p>
-
-      <p>
-        The project provided experience with
-        assembly constraints, mechanical tolerances,
-        component integration, and collaborative
-        CAD development.
+      <p class="about">
+        I'm a mechanical engineering student at
+        Washington University in St. Louis.
+        This section will eventually include more
+        about my experiences, interests, and approach
+        to engineering.
       </p>
     </section>
 
   </main>
 
-  <footer>
+  <!-- CONTACT -->
+
+  <footer id="contact">
     <div class="container">
-      <a href="index.html#projects">
-        ← Back to Projects
-      </a>
+      <h2>Let's Connect.</h2>
+      <p>Contact links coming soon.</p>
     </div>
   </footer>
 
